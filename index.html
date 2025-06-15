@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iowa Home Repairs - Professional Handyman Services</title>
+    <meta name="description" content="Professional handyman and home repair services in Cedar Falls, Iowa. Advanced business management app with AI-powered features.">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1a2b4a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Iowa Home Repairs">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Iowa%20Home%20Repairs%22%2C%22short_name%22%3A%22IHR%22%2C%22description%22%3A%22Professional%20handyman%20services%20management%22%2C%22start_url%22%3A%22/%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%231a2b4a%22%2C%22theme_color%22%3A%22%231a2b4a%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMxYTJiNGEiLz4KPHBhdGggZD0iTTQ4IDY0VjEyOEgxNDRWNjRINDhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/svg%2Bxml%22%7D%5D%7D">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="logo-container">
+                <div class="company-logo">
+                    <svg viewBox="0 0 120 120" fill="none">
+                        <rect width="120" height="120" rx="16" fill="#1a2b4a"/>
+                        <path d="M30 40V80H90V40H30Z" fill="white"/>
+                        <path d="M35 45H85V75H35V45Z" fill="#1a2b4a"/>
+                        <rect x="40" y="50" width="40" height="4" fill="white"/>
+                        <rect x="40" y="58" width="25" height="4" fill="white"/>
+                        <rect x="40" y="66" width="35" height="4" fill="white"/>
+                    </svg>
+                </div>
+                <h1 class="splash-title">Iowa Home Repairs</h1>
+                <p class="splash-subtitle">Professional Handyman Services</p>
+            </div>
+            <div class="loading-indicator">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="app" class="app-container hidden">
+        <!-- Navigation -->
+        <nav class="main-nav glass-effect">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="6" fill="#1a2b4a"/>
+                        <path d="M10 13V27H30V13H10Z" fill="white"/>
+                    </svg>
+                </div>
+                <span class="nav-title">Iowa Home Repairs</span>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn--icon" id="theme-toggle" title="Toggle Theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button class="btn btn--icon" id="install-btn" title="Install App">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view-container active">
+                <!-- AI Insights Banner -->
+                <div class="ai-banner glass-effect">
+                    <div class="ai-icon">🤖</div>
+                    <div class="ai-content">
+                        <h3>AI Business Insights</h3>
+                        <p id="ai-insight-text">Material costs represent 59.8% of expenses - consider bulk purchasing for better margins</p>
+                    </div>
+                    <button class="btn btn--sm btn--outline" id="next-insight">Next</button>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card glass-effect">
+                        <div class="kpi-icon">💰</div>
+                        <div class="kpi-content">
+                            <h4>Total Profit</h4>
+                            <div class="kpi-value">$20,198</div>
+                            <div class="kpi-trend positive">+8.5% vs last year</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card glass-effect">
+                        <div class="kpi-icon">📊</div>
+                        <div class="kpi-content">
+                            <h4>Profit Margin</h4>
+                            <div class="kpi-value">38.0%</div>
+                            <div class="kpi-trend positive">Increasing</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card glass-effect">
+                        <div class="kpi-icon">👥</div>
+                        <div class="kpi-content">
+                            <h4>Customer Retention</h4>
+                            <div class="kpi-value">75%</div>
+                            <div class="kpi-trend neutral">Target: 80%</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card glass-effect">
+                        <div class="kpi-icon">🚗</div>
+                        <div class="kpi-content">
+                            <h4>Mileage Deduction</h4>
+                            <div class="kpi-value">$2,385</div>
+                            <div class="kpi-trend positive">3,479 miles tracked</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions-section">
+                    <h3>Quick Actions</h3>
+                    <div class="action-grid">
+                        <button class="action-card glass-effect" data-action="scan-receipt">
+                            <div class="action-icon">📸</div>
+                            <div class="action-text">
+                                <h4>Scan Receipt</h4>
+                                <p>AI-powered OCR processing</p>
+                            </div>
+                        </button>
+                        <button class="action-card glass-effect" data-action="track-mileage">
+                            <div class="action-icon">📍</div>
+                            <div class="action-text">
+                                <h4>Track Mileage</h4>
+                                <p>GPS-based tracking</p>
+                            </div>
+                        </button>
+                        <button class="action-card glass-effect" data-action="create-invoice">
+                            <div class="action-icon">📄</div>
+                            <div class="action-text">
+                                <h4>Create Invoice</h4>
+                                <p>Professional templates</p>
+                            </div>
+                        </button>
+                        <button class="action-card glass-effect" data-action="view-reports">
+                            <div class="action-icon">📈</div>
+                            <div class="action-text">
+                                <h4>View Reports</h4>
+                                <p>12-month analytics</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Revenue Chart -->
+                <div class="chart-section">
+                    <h3>Monthly Revenue & Profit</h3>
+                    <div class="chart-container glass-effect">
+                        <canvas id="revenue-chart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expense Tracking View -->
+            <div id="expense-view" class="view-container">
+                <div class="view-header">
+                    <h2>Smart Expense Tracking</h2>
+                    <button class="btn btn--primary" id="add-expense-btn">+ Add Expense</button>
+                </div>
+
+                <!-- Receipt Scanner -->
+                <div class="scanner-section glass-effect">
+                    <div class="scanner-header">
+                        <h3>📸 AI Receipt Scanner</h3>
+                        <p>Advanced OCR with automatic categorization</p>
+                    </div>
+                    <div class="scanner-area" id="receipt-scanner">
+                        <div class="scanner-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none">
+                                <rect x="20" y="30" width="60" height="40" rx="4" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+                                <path d="M40 20L50 30L60 20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <p>Tap to scan receipt or upload image</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense List -->
+                <div class="expense-list-section">
+                    <div class="section-header">
+                        <h3>Recent Expenses</h3>
+                        <div class="filter-controls">
+                            <select class="form-control" id="expense-filter">
+                                <option value="all">All Categories</option>
+                                <option value="materials">Materials</option>
+                                <option value="vehicle">Vehicle & Fuel</option>
+                                <option value="tools">Tools & Equipment</option>
+                                <option value="insurance">Insurance</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="expense-list" id="expense-list">
+                        <!-- Expenses will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoice View -->
+            <div id="invoice-view" class="view-container">
+                <div class="view-header">
+                    <h2>Professional Invoices</h2>
+                    <button class="btn btn--primary" id="create-invoice-btn">+ Create Invoice</button>
+                </div>
+
+                <!-- Invoice Form -->
+                <div class="invoice-form-section glass-effect" id="invoice-form" style="display: none;">
+                    <h3>Create New Invoice</h3>
+                    <form id="invoice-form-element">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Customer</label>
+                                <select class="form-control" id="invoice-customer" required>
+                                    <option value="">Select Customer</option>
+                                    <option value="Johnson Family">Johnson Family</option>
+                                    <option value="Smith Residence">Smith Residence</option>
+                                    <option value="Downtown Apartments">Downtown Apartments</option>
+                                    <option value="Miller Construction">Miller Construction</option>
+                                    <option value="Cedar Falls Community Center">Cedar Falls Community Center</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Amount</label>
+                                <input type="number" class="form-control" id="invoice-amount" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" id="invoice-description" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Due Date</label>
+                                <input type="date" class="form-control" id="invoice-due-date" required>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Generate Invoice</button>
+                            <button type="button" class="btn btn--outline" id="cancel-invoice">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Invoice List -->
+                <div class="invoice-list-section">
+                    <h3>Recent Invoices</h3>
+                    <div class="invoice-list" id="invoice-list">
+                        <!-- Invoices will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports View -->
+            <div id="reports-view" class="view-container">
+                <div class="view-header">
+                    <h2>Financial Reports & Analytics</h2>
+                    <div class="report-controls">
+                        <select class="form-control" id="report-period">
+                            <option value="12months">Last 12 Months</option>
+                            <option value="6months">Last 6 Months</option>
+                            <option value="3months">Last 3 Months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Report Summary Cards -->
+                <div class="report-summary">
+                    <div class="summary-card glass-effect">
+                        <h4>Total Revenue</h4>
+                        <div class="summary-value">$53,150</div>
+                        <div class="summary-period">July 2024 - June 2025</div>
+                    </div>
+                    <div class="summary-card glass-effect">
+                        <h4>Total Expenses</h4>
+                        <div class="summary-value">$32,952</div>
+                        <div class="summary-trend negative">62% of revenue</div>
+                    </div>
+                    <div class="summary-card glass-effect">
+                        <h4>Net Profit</h4>
+                        <div class="summary-value">$20,198</div>
+                        <div class="summary-trend positive">38% margin</div>
+                    </div>
+                </div>
+
+                <!-- Expense Breakdown Chart -->
+                <div class="chart-section">
+                    <h3>Expense Breakdown</h3>
+                    <div class="chart-container glass-effect">
+                        <canvas id="expense-chart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Monthly Trend Chart -->
+                <div class="chart-section">
+                    <h3>12-Month Financial Trend</h3>
+                    <div class="chart-container glass-effect">
+                        <canvas id="trend-chart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav glass-effect">
+            <button class="nav-item active" data-view="dashboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </button>
+            <button class="nav-item" data-view="expense">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10 9 9 5.16 1 9-3.45 9-9V7l-10-5z"></path>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Expenses</span>
+            </button>
+            <button class="nav-item" data-view="invoice">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+                <span>Invoices</span>
+            </button>
+            <button class="nav-item" data-view="reports">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Reports</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Modals and Overlays -->
+    <div id="notification-container" class="notification-container"></div>
+    
+    <!-- Voice Command Indicator -->
+    <div id="voice-indicator" class="voice-indicator hidden">
+        <div class="voice-pulse"></div>
+        <p>Listening...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
